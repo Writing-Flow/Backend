@@ -1,0 +1,15 @@
+CREATE TABLE randomwords (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    word VARCHAR(255) NOT NULL,
+    syntactic_argument TEXT,
+    syntactic_annotation TEXT,
+    category VARCHAR(255),
+    definition TEXT NOT NULL,
+    origin VARCHAR(255),
+    sense_no VARCHAR(50),
+    target_code VARCHAR(50),
+    word_type VARCHAR(50),
+    pos VARCHAR(50),
+    full_json JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
