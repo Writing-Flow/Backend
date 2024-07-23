@@ -1,20 +1,14 @@
 const express = require('express');
-const randomSearchRoute = require('./function/serch/randomSearch');
 const searchRoute = require('./function/serch/search');
-const apiUserController = require('./api/user/controller');
-const authenticateToken = require('./middleware/authenticate');
+const quizRoute = require('./function/quiz/quizRoute'); // 퀴즈 라우터 추가
+const quizsaveRoute = require('./function/quiz/quizsaveRoute'); // 퀴즈 저장 라우터 추가
+const rankingRoute = require('./function/ranking/rankingRoute'); // 랭킹 라우터 추가
 
 const router = express.Router();
 
-router.use('/random-search', randomSearchRoute);
 router.use('/search', searchRoute);
-
-
-
-
-use(authenticateToken);
-router.get('/api/user/my', apiUserController.show);
-router.post('/api/user/my', apiUserController.update);
-
+router.use('/quiz', quizRoute);  // 퀴즈 라우터 사용
+router.use('/quizsave', quizsaveRoute);  // 퀴즈 저장 라우터 사용
+router.use('/ranking', rankingRoute);  // 랭킹 라우터 사용
 
 module.exports = router;
